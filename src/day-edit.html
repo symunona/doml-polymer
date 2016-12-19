@@ -1,0 +1,48 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="day-edit">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <div>
+        <div> The day: </div>
+            
+          <div class="card">
+            <div># <span>{{day.id}}</span></div>
+
+            <div><span>{{day.date}}</span> 
+            
+            <paper-input label="Name your day" value="[[day.title]]"></paper-input>
+
+            <span>{{day.title}}</span></div>
+            
+
+            <paper-texarea label="What happened today?" value="[[day.body]]"></paper-texarea>
+            
+            <div><span>{{day.body}}</span></div>
+
+          </div>
+      
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'day-edit',
+      properties:{
+        day:{
+            type: Object,
+            value: {}
+        }
+      }
+    });
+  </script>
+</dom-module>

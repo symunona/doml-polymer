@@ -1,0 +1,48 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="days-summary">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <div>
+        <div> The days: </div>
+                
+        <template is="dom-repeat" items="{{days}}" >
+          <div class="card">
+            <div># <span>{{index}}</span></div>
+            <div><span>{{item.date}}</span> <span>{{item.title}}</span></div>
+            <div><span>{{item.body}}</span></div>
+          </div>
+        </template>
+      
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'days-summary',
+      properties:{
+        days:{
+            type: Array,
+            value: [
+            //   {
+            //     date: '2016.12.12',
+            //     title: 'This is day#1 title',
+            //     body: 'bla bla bla bla summary'                
+            // },{
+            //     date: '2016.12.13',
+            //     title: 'Day#2 title',
+            //     body: 'bla bla bla bla summary 2'                
+            // }
+            ]
+        }
+      }
+    });
+  </script>
+</dom-module>
